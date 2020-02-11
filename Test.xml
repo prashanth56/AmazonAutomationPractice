@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestCaseSuite">
+<!--	<listeners>-->
+<!--		<listener class-name="com.qa.testng.TestListener"/>-->
+<!--	</listeners>-->
+	<test name="ecompliance Test Suite" parallel="false" preserve-order="true">
+		<classes>
+		<class name="com.qa.TestCaseSuite.ChallengeWorkFlow">
+			<methods>
+				<include name="homeTest" />
+				<include name="addToCartTest" />
+				<include name="selectCheckOutTest" />
+				<include name="selectProceedToCheckoutTest" />
+				<include name="selectCreateAccountTest" />
+				<include name="selectProceedCheckOutAfterSignUpTest" />
+				<include name="confirmOrderWithPaymentTest" />
+			</methods>
+		</class>
+		</classes>
+	</test>
+</suite>
