@@ -1,6 +1,6 @@
 package com.qa.Pages;
 
-import com.qa.Base.FrameworkProperties;
+import com.qa.TestData.TestData;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -35,13 +35,13 @@ public class SignInPage extends BasePage<SignInPage>  {
     public SignInPage() { super (); }
 
     public String SignInAmazon() {
-        System.out.println("val : "+ getActions().text(userName));
-        if (getActions().text(userName).contains("Hello, Sign in")) {
+
+        if (getActions().text(userName).contains("Sign in")) {
             //getActions().hover().moveToElement(hoverSignIn).build().perform();
             getActions().click(hoverSignIn);
-            getActions().type(emailID, FrameworkProperties.UNAME);
+            getActions().type(emailID, TestData.UNAME);
             getActions().click(cntnue);
-            getActions().type(password, FrameworkProperties.PWD);
+            getActions().type(password, TestData.PWD);
             getActions().click(checkbox);
             getActions().click(login);
             return getActions().text(userName);

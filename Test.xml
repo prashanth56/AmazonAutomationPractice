@@ -8,13 +8,11 @@
 		<classes>
 		<class name="com.qa.TestCaseSuite.ChallengeWorkFlow">
 			<methods>
-				<include name="homeTest" />
-				<include name="addToCartTest" />
-				<include name="selectCheckOutTest" />
-				<include name="selectProceedToCheckoutTest" />
-				<include name="selectCreateAccountTest" />
-				<include name="selectProceedCheckOutAfterSignUpTest" />
-				<include name="confirmOrderWithPaymentTest" />
+				<include name="singInTest" />
+				<include name="testSafetyHardHat" />
+				<include name="selectRatchetHardHatERBTest" />
+				<include name="safetyGoggleCheckoutTest" />
+				<include name="fireExtinguisherAddRemoveCartTest" />
 			</methods>
 		</class>
 		</classes>

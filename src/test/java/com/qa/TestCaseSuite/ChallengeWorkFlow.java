@@ -13,35 +13,29 @@ public class ChallengeWorkFlow  extends BaseTest{
         assertEquals(signIn.SignInAmazon(),"ecompliancetest");
 
     }
-      @Test (dependsOnMethods = {"singInTest"},  description = "Notice safety hard hat")
+      @Test ( priority = 2,  description = "Notice safety hard hat")
        public void testSafetyHardHat() throws InterruptedException {
-            //signIn.SignInAmazon();
+            singInTest();
             assertTrue(item.searchAndNoticeSafetyHardHat());
     }
 //
-//    @Test(dependsOnMethods={"singInTest"},  description = "Select Ratchet Hard Hat")
-//    public void selectCheckOutTest() throws InterruptedException{
-//        assertEquals(item.selectCheckOut(), "Your shopping cart");
-//    }
-//
-   @Test(dependsOnMethods = {"singInTest"},  description = "Select proceed to check out in Authentication page")
-    public void safetyGoggleCheckoutTest() throws InterruptedException{
-      assertEquals(check.selectProceedToCheckout(), "Authentication");
+    @Test(priority = 3,  description = "Select Ratchet Hard Hat")
+    public void selectRatchetHardHatERBTest() throws InterruptedException{
+        singInTest();
+        assertTrue(item.selectRatchetHardHatERB());
    }
-//    @Test(dependsOnMethods = {"selectProceedToCheckoutTest"},  description = "Create Account")
-//    public void selectCreateAccountTest() throws InterruptedException{
-//        assertEquals(signIn.createAccountDetails(), "Addresses");
-//    }
-//
-//    @Test(dependsOnMethods = "selectCreateAccountTest",  description = "Shipping and Final proceed to checkout")
-//    public void selectProceedCheckOutAfterSignUpTest() throws InterruptedException{
-//        assertEquals(signIn.selectProceedCheckOutAfterSignUp(),"Your payment method");
-//    }
-//
-//    @Test(dependsOnMethods = {"selectProceedCheckOutAfterSignUpTest"},  description = "payment confirmation and accept order")
-//    public void confirmOrderWithPaymentTest() throws InterruptedException{
-//        assertEquals(payment.confirmOrderWithPayment(),"Order confirmation");
-//    }
+
+   @Test(priority = 4,  description = "Add safety goggles to Cart")
+    public void safetyGoggleCheckoutTest() throws InterruptedException{
+       singInTest();
+      assertEquals(item.safetyGoggleAddToCart(), "1");
+   }
+
+    @Test(priority = 5, description = "Add Fire extinguisher to cart and Remove")
+    public void fireExtinguisherAddRemoveCartTest() throws InterruptedException{
+        singInTest();
+        assertEquals(item.fireExtinguisherAddRemoveCart(), "0");
+    }
 
 
 }
