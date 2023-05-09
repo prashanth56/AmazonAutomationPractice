@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>9</maven.compiler.source>
         <maven.compiler.target>9</maven.compiler.target>
-        <testng.version>6.14.3</testng.version>
+        <testng.version>7.5.1</testng.version>
         <selenium-java.version>3.141.59</selenium-java.version>
         <log4j.version>1.2.17</log4j.version>
         <java.version>1.8</java.version>
